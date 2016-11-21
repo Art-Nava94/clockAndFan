@@ -10,16 +10,7 @@ public class DrawArcs extends JFrame {
     setTitle("DrawArcs");
     
   }
-  static class Start implements ActionListener {        
-	  public void actionPerformed (ActionEvent e) {     
-	           
-	  }
-	}
-  static class Stop implements ActionListener {        
-	  public void actionPerformed (ActionEvent e) {     
-	    
-	  }
-	}
+
 
   /** Main method */
   public static void main(String[] args) {
@@ -37,7 +28,7 @@ public class DrawArcs extends JFrame {
 	//Thread test = new Thread(panel);
 	startButton.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent e){
-        	panel.setMyBoolean();
+        	panel.setMyBoolean(true);
         	Thread test = new Thread(panel);
         	test.start();
         }
@@ -82,9 +73,9 @@ class ArcsPanel extends JPanel implements Runnable{
 	  repaint(); 
   }
   
-  public void setMyBoolean(){
+  public void setMyBoolean(boolean input){
 	  
-	  myBoolean = true; 
+	  myBoolean = input; 
   }
   
   @Override
